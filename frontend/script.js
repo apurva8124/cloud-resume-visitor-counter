@@ -4,11 +4,20 @@ async function getVisitorCount() {
     try {
         const response = await fetch(apiURL);
         const data = await response.json();
-        document.getElementById('counter').innerText = data.count;
+
+        if (data && data.count !== undefined) {
+            document.getElementById('counter').innerText = data.count;
+        } else {
+            document.getElementById('counter').innerText = '0';
+        }
+
     } catch (error) {
-        console.log('Error:', error);
-        document.getElementById('counter').innerText = '1';
+        console.error('Error:', error);
+        document.getElementById('counter').innerText = 'Error';
     }
 }
 
-getVisitorCount();
+// ✅ ADD THIS PART (VERY IMPORTANT)
+document.addEventListener("DOMContentLoaded", function () {
+    getVisitorCount();
+});
