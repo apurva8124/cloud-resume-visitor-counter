@@ -253,25 +253,7 @@
         <p><i class="fas fa-eye"></i> This AWS cloud-hosted resume has been viewed <span id="counter">0</span> times.</p>
     </div>
 </div>
-
-<script>
-    // Replace the URL below with your actual API Gateway Invoke URL
-    const apiURL = 'https://53nhr8z039.execute-api.ap-south-1.amazonaws.com/test/visit';
-
-    async function getVisitorCount() {
-        try {
-            const response = await fetch(apiURL);			
-            const data = await response.json();
-			console.log(data)
-            document.getElementById('counter').innerText = data.count;
-        } catch (error) {
-            console.log('Error fetching counter:', error);
-            document.getElementById('counter').innerText = '1'; // Fallback
-        }
-    }
-
     getVisitorCount();
-</script>
 <script src="script.js"></script>
 </body>
 </html>
