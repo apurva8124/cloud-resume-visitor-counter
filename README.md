@@ -27,7 +27,11 @@ AWS Lambda (Backend Logic)
 DynamoDB (Visitor Counter Database)
 ```
 
----
+🔹 Architecture Diagram
+
+Flow:
+
+User → S3 → API Gateway → Lambda → DynamoDB
 
 ## 🛠️ Tech Stack
 
